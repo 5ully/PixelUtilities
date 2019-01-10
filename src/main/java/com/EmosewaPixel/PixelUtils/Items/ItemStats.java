@@ -13,6 +13,6 @@ public class ItemStats {
         this.texture = texture;
     }
 
-    public static ResourceLocation INGOT = new ResourceLocation("pixelurils:ingot");
-    public static ResourceLocation ROUGH_INGOT = new ResourceLocation("pixelurils:rough_ingot");
+    public static ResourceLocation INGOT = new ResourceLocation("pixelutils:ingot");
+    public static ResourceLocation ROUGH_INGOT = new ResourceLocation("pixelutils:rough_ingot");
 }

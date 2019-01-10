@@ -11,15 +11,15 @@ public class Items {
     public static ArrayList<ItemStats> stats = new ArrayList<>();
 
     public static void init() {
-        addStats("cast_iron_ingot", 0x393939, ItemStats.ROUGH_INGOT);
+        addStats("cast_iron_ingot", 0x444444, ItemStats.ROUGH_INGOT);
 
-        itemcomponent[0] = registerItem(stats.get(0).name);
+        itemcomponent[0] = registerItem(new ItemComponent(stats.get(0).name));
     }
 
-    private static Item registerItem(String name) {
-        GameData.register_impl(new ItemComponent(name));
+    private static Item registerItem(Item item) {
+        GameData.register_impl(item);
 
-        return new ItemComponent(name);
+        return item;
     }
 
     private static void addStats(String name, int color, ResourceLocation texture) {
