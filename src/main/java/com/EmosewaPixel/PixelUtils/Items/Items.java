@@ -7,7 +7,7 @@ import net.minecraftforge.registries.GameData;
 import java.util.ArrayList;
 
 public class Items {
-    protected static Item[] itemcomponent = new Item[40];
+    public static Item[] itemcomponent = new Item[40];
     protected static ArrayList<ItemStats> stats = new ArrayList<>();
 
     public static void init() {
