@@ -1,6 +1,5 @@
 package com.EmosewaPixel.PixelUtils;
 
-import com.EmosewaPixel.PixelUtils.Items.Items;
 import com.EmosewaPixel.PixelUtils.Mods.ExtremeReactors;
 import com.EmosewaPixel.PixelUtils.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
@@ -10,7 +9,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = PixelUtils.MODID, name = PixelUtils.NAME, version = PixelUtils.VERSION, dependencies = "required-after:bigreactors")
+@Mod(modid = PixelUtils.MODID, name = PixelUtils.NAME, version = PixelUtils.VERSION, dependencies = "required-after:bigreactors;required-after:endercore")
 public class PixelUtils {
     public static final String MODID = "pixelutils";
     public static final String NAME = "PixelUtils";
@@ -29,7 +28,7 @@ public class PixelUtils {
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
-        proxy.init(e);
         ExtremeReactors.init();
+        proxy.init(e);
     }
 }

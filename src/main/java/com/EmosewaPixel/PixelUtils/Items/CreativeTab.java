@@ -7,12 +7,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CreativeTab {
     public static CreativeTabs tabMain = new CreativeTabs(
-            "pixelutils.tabMain")
-    {
+            "pixelutils.tabMain") {
+
         @Override
         @SideOnly(Side.CLIENT)
-        public ItemStack getTabIconItem()
-        {
+        public ItemStack getTabIconItem() {
             return new ItemStack(Items.itemcomponent[0]);
         }
     };
