@@ -7,7 +7,7 @@ import net.minecraftforge.registries.GameData;
 import java.util.ArrayList;
 
 public class Items {
-    public static Item[] itemcomponent = new Item[40];
+    public static Item[] itemcomponent = new Item[43];
     protected static ArrayList<ItemStats> stats = new ArrayList<>();
 
     public static void init() {
@@ -47,15 +47,17 @@ public class Items {
         addStats("mana_blazestone", 0x2bcdde, ItemStats.POWDER);
         addStats("hearty", 0x98590f, ItemStats.ROUGH_INGOT);
         addStats("bloody", 0xc10101, ItemStats.ROUGH_INGOT);
-
+        addStats("redstone_soul", 0xa52c2c, ItemStats.SOUL);
         addStats("bobmonium", 0x6b4431, ItemStats.INGOT);
         addStats("brown_clay", 0xd9b377, ItemStats.CLAY);
         addStats("crimstane", 0xa42421, ItemStats.INGOT);
         addStats("plangstin", 0x575f68, ItemStats.INGOT);
         addStats("depleted_iskallium", 0xb2c8a4, ItemStats.INGOT);
+        addStats("urium", 0xf3d530, ItemStats.GEM_CUBIC);
+        addStats("empowered_urium", 0xf3d530, ItemStats.GEM_CUBIC, true);
 
         for (int i = 0; i < itemcomponent.length; i++)
-            itemcomponent[i] = registerItem(new ItemComponent(stats.get(i).name));
+            itemcomponent[i] = registerItem(new ItemComponent(stats.get(i).name, stats.get(i).isGlowing));
     }
 
     private static Item registerItem(Item item) {
@@ -65,9 +67,13 @@ public class Items {
     }
 
     private static void addStats(String name, int color, ResourceLocation texture) {
+        addStats(name, color, texture, false);
+    }
+
+    private static void addStats(String name, int color, ResourceLocation texture, boolean isGlowing) {
         if (texture == ItemStats.INGOT || texture == ItemStats.ROUGH_INGOT)
-            stats.add(new ItemStats(name + "_ingot", color, texture));
+            stats.add(new ItemStats(name + "_ingot", color, texture, isGlowing));
         else
-            stats.add(new ItemStats(name, color, texture));
+            stats.add(new ItemStats(name, color, texture, isGlowing));
     }
 }

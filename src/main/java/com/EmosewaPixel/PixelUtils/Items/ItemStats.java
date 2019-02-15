@@ -6,11 +6,13 @@ public class ItemStats {
     public String name;
     public int color;
     public ResourceLocation texture;
+    public boolean isGlowing;
 
-    public ItemStats(String name, int color, ResourceLocation texture) {
+    public ItemStats(String name, int color, ResourceLocation texture, boolean isGlowing) {
         this.name = name;
         this.color = color;
         this.texture = texture;
+        this.isGlowing = isGlowing;
     }
 
     public static ResourceLocation INGOT = new ResourceLocation("pixelutils:ingot");
@@ -23,4 +25,7 @@ public class ItemStats {
     public static ResourceLocation WIRE = new ResourceLocation("pixelutils:wire");
     public static ResourceLocation CLAY = new ResourceLocation("pixelutils:clay_ball");
     public static ResourceLocation BRICK = new ResourceLocation("pixelutils:brick");
+    public static ResourceLocation SOUL = new ResourceLocation("pixelutils:soul");
+    public static ResourceLocation GEM_CUBIC = new ResourceLocation("pixelutils:gem_cubic");
+
 }
